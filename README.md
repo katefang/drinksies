@@ -75,26 +75,21 @@ I will be using Foursquare's API.  https://api.foursquare.com/v2/venues/explore?
 
 ## Wireframes
 
-/assets/front page.png 
-
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
-
-### MVP/PostMVP
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
+The front page of the app will look like this. The user has to choose of the the 4 options. (assets/frontPage.png). 
+After the user has made a choice, the second page will look like this, which is a list of options.  (assets/secondPage.png). 
+When the user clicks on the image or anywhere that relates to a particular selection, then the third page will like this this.  It's a page that highlights the business selected with reviews, location, rating, recommeded drinks listed.  (assets/thirdPage.png)
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- be able to search places on the front page 
+- given 4 options to the user to choose from 
+- the second page will be a list of businesses with relevent information, the user can can pick one of the choices and be prompted to an extended view of the business. 
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
+- enables the user to to answer which business he/she chosed to keep a record 
 - Use local storage to save user favorites
+- recommeneds user a random place right when the user opens the app 
 
 ## Project Schedule
 
