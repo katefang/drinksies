@@ -75,6 +75,8 @@ I will be using Foursquare's API.  https://api.foursquare.com/v2/venues/explore?
 
 ## Wireframes
 
+/assets/front page.png 
+
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 
 ### MVP/PostMVP
