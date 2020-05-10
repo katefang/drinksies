@@ -1,15 +1,77 @@
 # Project Overview
 
 ## Project Name
+
 Find Drinks 
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+This is an app to help people search for drinks nearby.  Drinks could either be coffee, bubble tea, tea, or kombucha etc.. 
 
 ## API and Data Sample
 
 Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+
+I will be using Foursquare's API.  https://api.foursquare.com/v2/venues/explore?client_id=SVJRCTWSPPNDXTKD5QUGB4Q4210QCOM1HVTZQ1XWNQX3ED0B&client_secret=5XNAIWKWODNCHLJ5EVTGSZ3EELOKDKXVNQHBOTJ1KKDCGQFJ&near=new york, NY &query=coffee&v=20200510 
+
+{
+    "meta": {
+        "code": 200,
+        "requestId": "5eb8609cc8cff2001c4d80d9"
+    },
+    "response": {
+        "suggestedFilters": {
+            "header": "Tap to show:",
+            "filters": [
+                {
+                    "name": "Open now",
+                    "key": "openNow"
+                },
+                {
+                    "name": "$-$$$$",
+                    "key": "price"
+                }
+            ]
+        },
+        "geocode": {
+            "what": "",
+            "where": "new york ny",
+            "center": {
+                "lat": 40.742185,
+                "lng": -73.992602
+            },
+            "displayString": "New York, NY, United States",
+            "cc": "US",
+            "geometry": {
+                "bounds": {
+                    "ne": {
+                        "lat": 40.882214,
+                        "lng": -73.907
+                    },
+                    "sw": {
+                        "lat": 40.679548,
+                        "lng": -74.047285
+                    }
+                }
+            },
+            "slug": "new-york-city-new-york",
+            "longId": "72057594043056517"
+        },
+        "headerLocation": "New York",
+        "headerFullLocation": "New York",
+        "headerLocationGranularity": "city",
+        "query": "coffee",
+        "totalResults": 158,
+        "suggestedBounds": {
+            "ne": {
+                "lat": 40.79267583420711,
+                "lng": -73.95106540766615
+            },
+            "sw": {
+                "lat": 40.682754579323465,
+                "lng": -74.01340983773018
+            }
+        },
 
 ## Wireframes
 
