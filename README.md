@@ -6,7 +6,7 @@ Find Drinks
 
 ## Project Description
 
-This is an app to help people search for drinks nearby.  Drinks could either be coffee, bubble tea, tea, or kombucha etc.. 
+This is an app to help people search for drinks nearby.  Drinks could be coffee, bubble tea, tea, or kombucha etc.. 
 
 ## API and Data Sample
 
