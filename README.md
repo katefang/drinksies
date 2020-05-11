@@ -106,7 +106,7 @@ I will be using Foursquare's API.  https://api.foursquare.com/v2/venues/explore?
 
 ## Priority Matrix
 
-https://git.generalassemb.ly/katefang/find-drinks/blob/master/assets/Priority.png?raw=true
+![](assets/Priority.png) 
 
 ## Timeframes
 
