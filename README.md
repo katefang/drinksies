@@ -83,25 +83,22 @@ I will be using Foursquare's API.  https://api.foursquare.com/v2/venues/explore?
 
 - be able to search places on the front page 
 - given 4 options to the user to choose from 
-- the second page will be a list of businesses with relevent information, the user can can pick one of the choices and be prompted to an extended view of the business. 
+- the second page will be a list of businesses with relevent information
 
 #### PostMVP  
 
-- enables the user to to answer which business he/she chosed to keep a record 
+- when the user can can picks one of the choices from page 2, he/she will be prompted to an extended view of the business. 
+- enables the user to answer which business he/she chosed to keep a record 
 - Use local storage to save user favorites
 - recommeneds user a random place right when the user opens the app 
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
-
 |  Day | Deliverable | Status
 |---|---| ---|
-|May 8| Project Prompt | Incomplete
-|May 9-10| Wireframes / Priority Matrix / Timeframes | Incomplete
-|May 11| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|May 8| Project Prompt | Complete
+|May 9-10| Wireframes / Priority Matrix / Timeframes | Complete
+|May 11| Core Application Structure (HTML, CSS, etc.) | Inomplete
 |May 12| Pseudocode / actual code | Incomplete
 |May 13| Initial Clickable Model  | Incomplete
 |May 14| MVP | Incomplete
@@ -113,18 +110,15 @@ Include a full list of features that have been prioritized based on the `Time an
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
-
-
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML | H |3hrs| | | 
-| CSS | H |4hrs| | | 
-| searching places API | H | 4hrs| | 
-| linking the options to a specific API search| H | 4hrs | | | 
-| Total | H | 15hrs| | |
+| HTML | L |2hrs| | | 
+| CSS | M |3hrs| | | 
+| Advanced CSS | H  |4hrs| 
+| search bar API | H | 4hrs| | 
+| Attach eventlisteners to pics and link them to API searches| H | 4hrs | | | 
+| Appending API data to the DOM | H | 4hrs | | | 
+| Total | H | 21hrs| | |
 
 ## Code Snippet
 
