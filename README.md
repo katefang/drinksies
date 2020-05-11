@@ -106,7 +106,7 @@ I will be using Foursquare's API.  https://api.foursquare.com/v2/venues/explore?
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+https://git.generalassemb.ly/katefang/find-drinks/blob/master/assets/Priority.png?raw=true
 
 ## Timeframes
 
