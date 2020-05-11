@@ -75,9 +75,12 @@ I will be using Foursquare's API.  https://api.foursquare.com/v2/venues/explore?
 
 ## Wireframes
 
-- The front page of the app will look like this. The user has to choose of the the 4 options. (assets/frontPage.png). 
-- After the user has made a choice, the second page will look like this, which is a list of options.  (assets/secondPage.png). 
-- When the user clicks on the image or anywhere that relates to a particular selection, then the third page will like this this.  It's a page that highlights the business selected with reviews, location, rating, recommeded drinks listed.  (assets/thirdPage.png)
+![](assets/frontPage.png)
+- The front page of the app will look like this. The user has to choose of the the 4 options. 
+![](assets/secondPage.png)
+- After the user has made a choice, the second page will look like this, which is a list of options. 
+![](assets/thirdPage.png)
+- When the user clicks on the image or anywhere that relates to a particular selection, then the third page will like this this.  It's a page that highlights the business selected with reviews, location, rating, recommeded drinks listed.  
 
 #### MVP 
 
