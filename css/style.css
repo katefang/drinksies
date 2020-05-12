@@ -1,6 +1,7 @@
 body {
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  margin: 0;
 }
 header {
   text-align: left;
@@ -48,20 +49,40 @@ button:active {
   border-color: rgba(255, 255, 255, 0.4);
   transition: background-color 0.3s ease-in, color 0.3s ease-in;
 }
-.img-container {
-  border: 1px solid #888888;
-  border-radius: 5px;
-  width: 60%;
-  padding: 10px;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-between;
+footer {
+  background-color: #e7cdd7;
+  margin-top: 20px;
+  padding: 30px 0 10px;
 }
-
+.img-container {
+  margin: 10px auto;
+  display: grid;
+  justify-content: center;
+  grid-template-areas:
+    "coffee bubble"
+    "smoothie juice";
+}
 .options {
   width: 200px;
   height: 300px;
-  border-radius: 5px;
-  display: flex;
-  flex-flow: row wrap;
+  margin: 10px;
+  border-radius: 10px;
+  display: grid;
+}
+
+#coffee {
+  display: grid;
+  grid-area: "coffee";
+}
+#bubble-tea {
+  display: grid;
+  grid-area: "bubble";
+}
+#smoothie {
+  display: grid;
+  grid-area: "smoothie";
+}
+#juice {
+  display: grid;
+  grid-area: "juice";
 }

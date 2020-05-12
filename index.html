@@ -12,7 +12,8 @@
       defer
       src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
     ></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="./config.js"></script>
     <script defer src="./app.js"></script>
     <title>Time for a Drink</title>
   </head>
@@ -30,8 +31,12 @@
               id="loading"
               alt="loading"
             /> -->
-            <input type="text" placeholder="search for nearby shops" />
-            <button>Search</button>
+            <input
+              id="index-input"
+              type="text"
+              placeholder="search for nearby shops"
+            />
+            <button id="index-search">Search</button>
           </form>
         </section>
       </section>

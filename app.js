@@ -1,10 +1,11 @@
-const clientId = "SVJRCTWSPPNDXTKD5QUGB4Q4210QCOM1HVTZQ1XWNQX3ED0B";
-const clientSecret = "5XNAIWKWODNCHLJ5EVTGSZ3EELOKDKXVNQHBOTJ1KKDCGQFJ";
+const clientId = config.clientId;
+const clientSecret = config.clientSecret;
 const v = "20200511";
-const value = document.querySelector("input");
+const value = document.querySelector("#index-input");
 const form = document.querySelector("form");
 const errorDiv = document.querySelector(".error-message");
-let ll = "new york, ny";
+let ll = "new york,ny";
+const listContainer = document.querySelector(".list-container");
 
 // prompt the user to get current location
 // const getLL = function (e) {
@@ -30,6 +31,7 @@ let ll = "new york, ny";
 //       break;
 //   }
 // };
+// // might change to watchPosition
 // navigator.geolocation.getCurrentPosition(getLL, error);
 
 //  using longitude and latitude find businesses nearby
@@ -44,17 +46,23 @@ const findPlaces = async query => {
   }
 };
 
-findPlaces("coffee");
+findPlaces("tea");
 
 const showBusiness = list => {
-  window.location.pathname =
-    "/Users/Kate/GeneralAssembly/SEI/Unit_1/Week_3/find-drinks/list.html";
+  // window.location.pathname =
+  // "/Users/Kate/GeneralAssembly/SEI/Unit_1/Week_3/find-drinks/list.html";
+
   list.forEach(item => {
-    console.log(item);
+    console.log(item.venue);
+    const listDiv = document.createElement("div");
+
+    // listDiv.innerHTML = `${item.venue.name}<br>
+    // ${item.venue.location}`;
+    // listContainer.append(listDiv);
   });
 };
+
 // form.addEventListener("submit", e => {
 //   e.preventDefault();
 //   findPlaces(value);
-//   form.reset();
 // });
