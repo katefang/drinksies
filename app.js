@@ -38,10 +38,7 @@ const findPlaces = async query => {
     const url = `https://api.foursquare.com/v2/venues/explore?client_id=${clientId}&client_secret=${clientSecret}&near=${ll}&v=${v}&query=${query}`;
     const response = await axios.get(url);
     let list = response.data.response.groups[0].items;
-    console.log(list);
-
-    // const data = response.data;
-    // console.log(data.groups);
+    showBusiness(list);
   } catch (err) {
     console.log(err);
   }
@@ -49,6 +46,13 @@ const findPlaces = async query => {
 
 findPlaces("coffee");
 
+const showBusiness = list => {
+  // window.location.pathname =
+  //   "/Users/Kate/GeneralAssembly/SEI/Unit_1/Week_3/find-drinks/list.html";
+  list.forEach(item => {
+    console.log(item);
+  });
+};
 // form.addEventListener("submit", e => {
 //   e.preventDefault();
 //   findPlaces(value);

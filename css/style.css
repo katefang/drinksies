@@ -24,7 +24,6 @@ h1 {
 }
 input {
   width: 300px;
-  /* height: 36px; */
   background-color: transparent;
   border: 1px solid #fff;
   border-radius: 5px;
@@ -49,28 +48,14 @@ button:active {
   border-color: rgba(255, 255, 255, 0.4);
   transition: background-color 0.3s ease-in, color 0.3s ease-in;
 }
-.suggestions {
-  display: grid;
+.img-container {
+  display: flex;
+  justify-content: space-around;
 }
+
 .options {
   width: 200px;
   height: 300px;
-  display: grid;
-  grid-template-areas: "coffee bubble smoothie juice";
-}
-#coffee {
-  display: grid;
-  grid-area: coffee;
-}
-#bubble-tea {
-  display: grid;
-  grid-area: bubble;
-}
-#smoothie {
-  display: grid;
-  grid-area: smoothie;
-}
-#juice {
-  display: grid;
-  grid-area: juice;
+  display: flex;
+  flex-flow: row wrap;
 }
