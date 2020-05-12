@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton|Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="./app.js"></script>
+    <title>Time for a Drink</title>
+  </head>
+  <body>
+    <header>
+      <h3 class="app-name"><i class="far fa-clock"></i> 3:15</h3>
+    </header>
+    <main>
+      <section class="welcome">
+        <section class="search">
+          <h1>It's time for a drink!</h1>
+          <form action="submit">
+            <!-- <img
+              src="https://www.demilked.com/magazine/wp-content/uploads/2016/06/gif-animations-replace-loading-screen-14.gif"
+              id="loading"
+              alt="loading"
+            /> -->
+            <input type="text" placeholder="search for nearby shops" />
+            <button>Search</button>
+          </form>
+        </section>
+      </section>
+      <section class="suggestions">
+        <h2>Or Pick One!</h2>
+        <img
+          id="coffee"
+          class="options"
+          src="https://images.unsplash.com/photo-1522120573867-e574959f84c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+          alt="coffee"
+        />
+        <img
+          id="bubble-tea"
+          class="options"
+          src="https://images.unsplash.com/photo-1558857563-b371033873b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+          alt="bubble tea"
+        />
+        <img
+          id="smoothie"
+          class="options"
+          src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          alt="smoothie"
+        />
+        <img
+          id="juice"
+          class="options"
+          src="https://images.unsplash.com/flagged/photo-1557753478-b9fb74f39eb5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          alt="juice"
+        />
+      </section>
+    </main>
+    <footer>
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fas fa-envelope"></i>
+      <p>© 2020 Copyright 3:15</p>
+    </footer>
+  </body>
+</html>

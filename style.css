@@ -1,0 +1,76 @@
+body {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+header {
+  text-align: left;
+}
+.app-name {
+  font-family: "Anton", sans-serif;
+}
+.welcome {
+  display: flex;
+  background-image: url("https://images.unsplash.com/photo-1558470570-c9a5a5ade867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
+  background-repeat: no-repeat;
+  height: 550px;
+  background-size: 100%;
+  box-shadow: 0 0 2px 2px white inset;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  color: #f9f9f9;
+  font-size: 40px;
+}
+input {
+  width: 300px;
+  /* height: 36px; */
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #000;
+  padding: 10px;
+  font-size: 20px;
+}
+button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 20px;
+  outline: none;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out,
+    border-color 0.3s ease-out;
+}
+button:hover,
+button:active {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+.suggestions {
+  display: grid;
+}
+.options {
+  width: 200px;
+  height: 300px;
+  display: grid;
+  grid-template-areas: "coffee bubble smoothie juice";
+}
+#coffee {
+  display: grid;
+  grid-area: coffee;
+}
+#bubble-tea {
+  display: grid;
+  grid-area: bubble;
+}
+#smoothie {
+  display: grid;
+  grid-area: smoothie;
+}
+#juice {
+  display: grid;
+  grid-area: juice;
+}
