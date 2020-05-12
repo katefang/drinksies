@@ -47,8 +47,8 @@ const findPlaces = async query => {
 findPlaces("coffee");
 
 const showBusiness = list => {
-  // window.location.pathname =
-  //   "/Users/Kate/GeneralAssembly/SEI/Unit_1/Week_3/find-drinks/list.html";
+  window.location.pathname =
+    "/Users/Kate/GeneralAssembly/SEI/Unit_1/Week_3/find-drinks/list.html";
   list.forEach(item => {
     console.log(item);
   });
