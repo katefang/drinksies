@@ -1,6 +1,9 @@
 const key = config.key;
-const value = document.querySelector("#index-input");
-const form = document.querySelector("form");
+const firstValue = document.querySelector("#first-input").value;
+const secondValue = document.querySelector("#second-input").value;
+const firstForm = document.querySelector("#first-form");
+const secondForm = document.querySelector("#second-form");
+const appName = document.querySelector(".app-name");
 const errorDiv = document.querySelector(".error-message");
 const firstPage = document.querySelector("#first-page");
 const secondPage = document.querySelector("#second-page");
@@ -10,13 +13,12 @@ const bubbleTea = document.querySelector("#bubble-tea");
 const smoothie = document.querySelector("#smoothie");
 const juice = document.querySelector("#juice");
 const loadingDiv = document.querySelector("#loading");
-let ll = "40.730610, -73.935242";
+let ll = "40.7590, -73.9845";
 // let ll;
 
 // prompt the user to get current location
 // const getLL = function (e) {
 //   ll = e.coords.latitude + "," + e.coords.longitude;
-//   console.log(ll);
 //   localStorage.setItem("ll", ll);
 //   console.log(ll);
 //   return ll;
@@ -38,13 +40,13 @@ let ll = "40.730610, -73.935242";
 //       break;
 //   }
 // };
+// // navigator.geolocation.getCurrentPosition(getLL, error);
 
 // window.onload = () => {
-//   if (localStorage.ll || this.ll) {
-//     loadingDiv.remove();
-//   } else {
+//   if (localStorage.getItem(ll) === null) {
 //     navigator.geolocation.getCurrentPosition(getLL, error);
-//     loadingDiv.remove();
+//   } else {
+//     loadingDiv.style.display = "none";
 //   }
 // };
 
@@ -69,6 +71,9 @@ const getDetails = async placeId => {
   try {
     const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,place_id,rating,review,types,vicinity,price_level,photo&key=${key}`;
     const response = await axios.get(url);
+    if (response) {
+      loadingDiv.remove();
+    }
     displayBusinessInfo(response.data.result);
   } catch (err) {
     console.log(err);
@@ -96,7 +101,7 @@ const displayBusinessInfo = item => {
       price = "$$$$$";
       break;
     case item.price_level > 5:
-      price = "too expensive";
+      price = "too expensive for you";
       break;
     default:
       price = "$";
@@ -105,7 +110,7 @@ const displayBusinessInfo = item => {
   const listDiv = document.createElement("div");
   listDiv.className = "list-wrapper";
   listDiv.innerHTML = `
-    <img class="venue-img" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=${item.photos[0].photo_reference}&key=${key}"/>
+    <img class="venue-img" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=${item.photos[0].photo_reference}&key=${key}"/>
     <div class="content-wrapper">
     <h4 class="venue-name">${item.name}</h4>
     <p class="venue-type"><em>${item.types[0]}/${item.types[1]}</em></p>
@@ -123,30 +128,52 @@ coffee.addEventListener("click", e => {
   findPlaces("coffee");
   firstPage.style.display = "none";
   secondPage.style.display = "block";
+  loadingDiv.style.display = "block";
 });
 bubbleTea.addEventListener("click", e => {
   e.preventDefault();
   findPlaces("bubble tea");
+  firstPage.style.display = "none";
+  secondPage.style.display = "block";
+  loadingDiv.style.display = "block";
 });
 smoothie.addEventListener("click", e => {
   e.preventDefault();
   findPlaces("smoothies");
+  firstPage.style.display = "none";
+  secondPage.style.display = "block";
+  loadingDiv.style.display = "block";
 });
 juice.addEventListener("click", e => {
   e.preventDefault();
   findPlaces("juices");
-});
-
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  loadingDiv.style.display = "block";
   firstPage.style.display = "none";
   secondPage.style.display = "block";
-  loadingDiv.style.display = "none";
-  removeLastPlace();
-  findPlaces(value);
+  loadingDiv.style.display = "block";
 });
 
+// add event handlers to forms
+firstForm.addEventListener("submit", e => {
+  e.preventDefault();
+  firstPage.style.display = "none";
+  secondPage.style.display = "block";
+  loadingDiv.style.display = "block";
+  loadingDiv.style.display = "block";
+  findPlaces(firstValue);
+});
+secondForm.addEventListener("submit", e => {
+  e.preventDefault();
+  removeLastPlace();
+  loadingDiv.style.display = "block";
+  findPlaces(secondValue);
+  secondForm.reset();
+});
+
+// add event handler to app name
+appName.addEventListener("click", () => {
+  location.reload();
+});
+// remove last search
 const removeLastPlace = () => {
   while (listContainer.lastChild) {
     listContainer.removeChild(listContainer.lastChild);

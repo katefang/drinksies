@@ -34,11 +34,11 @@
       <section class="welcome">
         <section class="search">
           <h1>It's time for a drink!</h1>
-          <form action="submit">
+          <form action="submit" id="first-form">
             <input
-              id="index-input"
               type="text"
-              placeholder="search for nearby shops"
+              id="first-input"
+              placeholder="coffee, bubble-tea, smoothies..."
             />
             <button id="index-search">Search</button>
           </form>
@@ -75,10 +75,14 @@
       </section>
     </main>
     <div id="second-page">
-      <!-- <form action="submit">
-        <input type="text" placeholder="search for nearby shops" />
+      <form action="submit" id="second-form">
+        <input
+          type="text"
+          id="second-input"
+          placeholder="coffee, bubble-tea, smoothies..."
+        />
         <button>Search</button>
-      </form> -->
+      </form>
       <hr />
       <section class="list-container">
         <h1 class="list-title"></h1>
