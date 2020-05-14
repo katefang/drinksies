@@ -119,32 +119,23 @@ const displayBusinessInfo = item => {
 
 // add event handler to each image on front page
 coffee.addEventListener("click", e => {
-  findPlaces("coffee");
   e.preventDefault();
+  findPlaces("coffee");
+  firstPage.style.display = "none";
+  secondPage.style.display = "block";
 });
-
-// if (bubbleTea) {
-//   bubbleTea.addEventListener("click", e => {
-//     e.preventDefault();
-//     findPlaces("bubble tea");
-//     location.href = "list.html";
-//   });
-// }
-
-// if (smoothie) {
-//   smoothie.addEventListener("click", e => {
-//     e.preventDefault();
-//     location.href = "list.html";
-//     findPlaces("smoothies");
-//   });
-// }
-
-// if (juice) {
-//   juice.addEventListener("click", e => {
-//     e.preventDefault();
-//     findPlaces("juices");
-//   });
-// }
+bubbleTea.addEventListener("click", e => {
+  e.preventDefault();
+  findPlaces("bubble tea");
+});
+smoothie.addEventListener("click", e => {
+  e.preventDefault();
+  findPlaces("smoothies");
+});
+juice.addEventListener("click", e => {
+  e.preventDefault();
+  findPlaces("juices");
+});
 
 form.addEventListener("submit", e => {
   e.preventDefault();
