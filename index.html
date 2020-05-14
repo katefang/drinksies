@@ -7,30 +7,34 @@
       href="https://fonts.googleapis.com/css?family=Anton|Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
     ></script>
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script defer src="./js/config.js"></script>
-    <script defer src="./js/app.js"></script>
-    <title>Time for a Drink</title>
+    <script defer src="js/config.js"></script>
+    <script defer src="js/app.js"></script>
+    <title>Drinksies</title>
   </head>
   <body>
+    <div id="loading">
+      <img
+        src="https://www.demilked.com/magazine/wp-content/uploads/2016/06/gif-animations-replace-loading-screen-14.gif"
+        id="loading-img"
+        alt="loading"
+      />
+    </div>
     <header>
-      <h3 class="app-name"><i class="far fa-clock"></i> 3:15</h3>
+      <h3 class="app-name">
+        <img src="assets/food.svg" alt="drink" />Drinksies
+      </h3>
     </header>
-    <main>
+    <main id="first-page">
       <section class="welcome">
         <section class="search">
           <h1>It's time for a drink!</h1>
           <form action="submit">
-            <!-- <img
-              src="https://www.demilked.com/magazine/wp-content/uploads/2016/06/gif-animations-replace-loading-screen-14.gif"
-              id="loading"
-              alt="loading"
-            /> -->
             <input
               id="index-input"
               type="text"
@@ -41,7 +45,7 @@
         </section>
       </section>
       <section class="suggestions">
-        <h2 class="suggestion-title">Or Pick One!</h2>
+        <h2 class="suggestion-title">Try something new today!</h2>
         <div class="img-container">
           <img
             id="coffee"
@@ -70,12 +74,22 @@
         </div>
       </section>
     </main>
+    <div id="second-page">
+      <!-- <form action="submit">
+        <input type="text" placeholder="search for nearby shops" />
+        <button>Search</button>
+      </form> -->
+      <hr />
+      <section class="list-container">
+        <h1 class="list-title"></h1>
+      </section>
+    </div>
     <footer>
       <i class="fab fa-facebook-f"></i>
       <i class="fab fa-twitter"></i>
       <i class="fab fa-instagram"></i>
       <i class="fas fa-envelope"></i>
-      <p>© 2020 Copyright 3:15</p>
+      <p>© 2020 Copyright Drinksies</p>
     </footer>
   </body>
 </html>
