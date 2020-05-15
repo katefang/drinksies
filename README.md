@@ -135,7 +135,6 @@ function getLL(e) {
   if (localStorage.ll) {
     loadingDiv.remove();
   }
-  return ll;
 }
 
 const error = function (err) {
