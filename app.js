@@ -64,7 +64,6 @@ const getDetails = async placeId => {
   try {
     const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,place_id,rating,review,types,formatted_phone_number,opening_hours,vicinity,price_level,photo&key=${key}`;
     const response = await axios.get(url);
-    console.log(response);
     if (response) {
       loadingDiv.style.display = "none";
     }
@@ -118,31 +117,31 @@ const displaySecondPage = item => {
 // add event handler to each image on front page
 coffee.addEventListener("click", e => {
   e.preventDefault();
-  findPlaces("coffee");
   firstPage.style.display = "none";
   secondPage.style.display = "block";
   loadingDiv.style.display = "block";
+  findPlaces("coffee");
 });
 bubbleTea.addEventListener("click", e => {
   e.preventDefault();
-  findPlaces("bubble tea");
   firstPage.style.display = "none";
   secondPage.style.display = "block";
   loadingDiv.style.display = "block";
+  findPlaces("bubble tea");
 });
 smoothie.addEventListener("click", e => {
   e.preventDefault();
-  findPlaces("smoothies");
   firstPage.style.display = "none";
   secondPage.style.display = "block";
   loadingDiv.style.display = "block";
+  findPlaces("smoothies");
 });
 juice.addEventListener("click", e => {
   e.preventDefault();
-  findPlaces("juices");
   firstPage.style.display = "none";
   secondPage.style.display = "block";
   loadingDiv.style.display = "block";
+  findPlaces("juices");
 });
 
 // add event handlers to forms
