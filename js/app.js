@@ -19,12 +19,9 @@ const loadingDiv = document.querySelector("#loading");
 function getLL(e) {
   let ll = e.coords.latitude + "," + e.coords.longitude;
   localStorage.setItem("ll", ll);
-  console.log(ll);
-  console.log(localStorage.ll);
   if (localStorage.ll) {
     loadingDiv.remove();
   }
-  return ll;
 }
 
 const error = function (err) {
