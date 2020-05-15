@@ -132,8 +132,6 @@ Use this section to include a brief code snippet of functionality that you are p
 function getLL(e) {
   let ll = e.coords.latitude + "," + e.coords.longitude;
   localStorage.setItem("ll", ll);
-  console.log(ll);
-  console.log(localStorage.ll);
   if (localStorage.ll) {
     loadingDiv.remove();
   }
