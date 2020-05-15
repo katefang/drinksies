@@ -1,6 +1,4 @@
 const key = "AIzaSyC-LwFVrb9jBX-hQi6j_MyRRL7TxmoY84c";
-const firstValue = document.querySelector("#first-input").value;
-const secondValue = document.querySelector("#second-input").value;
 const firstForm = document.querySelector("#first-form");
 const secondForm = document.querySelector("#second-form");
 const appName = document.querySelector(".app-name");
@@ -20,7 +18,7 @@ function getLL(e) {
   let ll = e.coords.latitude + "," + e.coords.longitude;
   localStorage.setItem("ll", ll);
   if (localStorage.ll) {
-    loadingDiv.remove();
+    loadingDiv.style.display = "none";
   }
 }
 
@@ -65,9 +63,10 @@ const findPlaces = async keyword => {
 const getDetails = async placeId => {
   try {
     const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,place_id,rating,review,types,formatted_phone_number,opening_hours,vicinity,price_level,photo&key=${key}`;
-    var response = await axios.get(url);
+    const response = await axios.get(url);
+    console.log(response);
     if (response) {
-      loadingDiv.remove();
+      loadingDiv.style.display = "none";
     }
     displaySecondPage(response.data.result);
   } catch (err) {
@@ -77,7 +76,6 @@ const getDetails = async placeId => {
 
 // display business details to list.html
 const displaySecondPage = item => {
-  console.log(item);
   let price;
   switch (item.price_level) {
     case item.price_level === 1:
@@ -153,13 +151,14 @@ firstForm.addEventListener("submit", e => {
   firstPage.style.display = "none";
   secondPage.style.display = "block";
   loadingDiv.style.display = "block";
-  loadingDiv.style.display = "block";
+  let firstValue = document.querySelector("#first-input").value;
   findPlaces(firstValue);
 });
 secondForm.addEventListener("submit", e => {
   e.preventDefault();
   removeLastPlace();
   loadingDiv.style.display = "block";
+  let secondValue = document.querySelector("#second-input").value;
   findPlaces(secondValue);
   secondForm.reset();
 });
