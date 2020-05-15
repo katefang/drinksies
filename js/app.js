@@ -1,4 +1,4 @@
-const key = config.key;
+const key = "AIzaSyC-LwFVrb9jBX-hQi6j_MyRRL7TxmoY84c";
 const firstValue = document.querySelector("#first-input").value;
 const secondValue = document.querySelector("#second-input").value;
 const firstForm = document.querySelector("#first-form");
