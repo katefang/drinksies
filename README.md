@@ -73,14 +73,15 @@ I will be using Foursquare's API. https://api.foursquare.com/v2/venues/explore?c
 }
 },
 
+Due to limitation issues, I've decided to use Google places API instead.  
+
 ## Wireframes
 
 - The front page of the app will look like this. The user has to choose of the the 4 options.
   ![](assets/frontPage.png)
 - After the user has made a choice, the second page will look like this, which is a list of options.
   ![](assets/secondPage.png)
-- When the user clicks on the image or anywhere that relates to a particular selection, then the third page will like this this. It's a page that highlights the business selected with reviews, location, rating, recommended drinks listed.
-  ![](assets/thirdPage.png)
+
 
 #### MVP
 
@@ -101,9 +102,9 @@ I will be using Foursquare's API. https://api.foursquare.com/v2/venues/explore?c
 | -------- | -------------------------------------------- | ---------- |
 | May 8    | Project Prompt                               | Complete   |
 | May 9-10 | Wireframes / Priority Matrix / Timeframes    | Complete   |
-| May 11   | Core Application Structure (HTML, CSS, etc.) | Inomplete  |
-| May 12   | Pseudocode / actual code                     | Incomplete |
-| May 13   | Initial Clickable Model                      | Incomplete |
+| May 11   | Core Application Structure (HTML, CSS, etc.) | Complete  |
+| May 12   | Get data back from google places API    	  | Complete |
+| May 13   | Append API data to the DOM                   | Incomplete |
 | May 14   | MVP                                          | Incomplete |
 | May 15   | Present                                      | Incomplete |
 
@@ -115,24 +116,54 @@ I will be using Foursquare's API. https://api.foursquare.com/v2/venues/explore?c
 
 | Component                                                   | Priority | Estimated Time | Time Invested | Actual Time |
 | ----------------------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| HTML                                                        |    L     |      2hrs      |               |             |
-| CSS                                                         |    M     |      3hrs      |               |             |
-| Advanced CSS                                                |    H     |      4hrs      |
-| search bar API                                              |    H     |      4hrs      |               |
-| Attach eventlisteners to pics and link them to API searches |    H     |      4hrs      |               |             |
-| Appending API data to the DOM                               |    H     |      4hrs      |               |             |
-| Total                                                       |    H     |     21hrs      |               |             |
+| HTML                                                        |    L     |      2hrs      |      3        |       3     |
+| CSS                                                         |    M     |      3hrs      |      4        |       4     |
+| Advanced CSS                                                |    H     |      4hrs      |	 4	  |	  4	|
+| search bar API                                              |    H     |      4hrs      |      4        |	  4	|
+| Attach eventlisteners to pics and link them to API searches |    H     |      4hrs      |      6        |       6     |
+| Appending API data to the DOM                               |    H     |      4hrs      |      6        |       6     |
+| Total                                                       |    H     |     21hrs      |     27        |       27    |
 
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+function getLL(e) {
+  let ll = e.coords.latitude + "," + e.coords.longitude;
+  localStorage.setItem("ll", ll);
+  console.log(ll);
+  console.log(localStorage.ll);
+  if (localStorage.ll) {
+    loadingDiv.remove();
+  }
+  return ll;
+}
+
+const error = function (err) {
+  switch (err.code) {
+    case err.PERMISSION_DENIED:
+      alert("Location request denied");
+      break;
+    case err.TIMEOUT:
+      alert("Request timed out");
+      break;
+    case err.POSITION_UNAVAILABLE:
+      alert("Location service not available");
+      break;
+    default:
+      alert("An unknown error occurred");
+      break;
+  }
+};
+
+if (!localStorage.ll) {
+  loadingDiv.style.display = "block";
+  navigator.geolocation.getCurrentPosition(getLL, error);
 }
 ```
+I am able to get the user's location and save it to a variable to save to local storage.  If the variable exists in local storage. Then it will not ask the user again for it.  
 
 ## Change Log
 
-Use this section to document what changes were made and the reasoning behind those changes.
+
