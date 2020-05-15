@@ -13,46 +13,46 @@ const bubbleTea = document.querySelector("#bubble-tea");
 const smoothie = document.querySelector("#smoothie");
 const juice = document.querySelector("#juice");
 const loadingDiv = document.querySelector("#loading");
-let ll = "40.7590, -73.9845";
-// let ll;
+// let ll = "40.7590, -73.9845";
 
 // prompt the user to get current location
-// const getLL = function (e) {
-//   ll = e.coords.latitude + "," + e.coords.longitude;
-//   localStorage.setItem("ll", ll);
-//   console.log(ll);
-//   return ll;
-// };
+function getLL(e) {
+  let ll = e.coords.latitude + "," + e.coords.longitude;
+  localStorage.setItem("ll", ll);
+  console.log(ll);
+  console.log(localStorage.ll);
+  if (localStorage.ll) {
+    loadingDiv.remove();
+  }
+  return ll;
+}
 
-// const error = function (err) {
-//   switch (err.code) {
-//     case err.PERMISSION_DENIED:
-//       alert("Location request denied");
-//       break;
-//     case err.TIMEOUT:
-//       alert("Request timed out");
-//       break;
-//     case err.POSITION_UNAVAILABLE:
-//       alert("Location service not available");
-//       break;
-//     default:
-//       alert("An unknown error occurred");
-//       break;
-//   }
-// };
-// // navigator.geolocation.getCurrentPosition(getLL, error);
+const error = function (err) {
+  switch (err.code) {
+    case err.PERMISSION_DENIED:
+      alert("Location request denied");
+      break;
+    case err.TIMEOUT:
+      alert("Request timed out");
+      break;
+    case err.POSITION_UNAVAILABLE:
+      alert("Location service not available");
+      break;
+    default:
+      alert("An unknown error occurred");
+      break;
+  }
+};
 
-// window.onload = () => {
-//   if (localStorage.getItem(ll) === null) {
-//     navigator.geolocation.getCurrentPosition(getLL, error);
-//   } else {
-//     loadingDiv.style.display = "none";
-//   }
-// };
+if (!localStorage.ll) {
+  loadingDiv.style.display = "block";
+  navigator.geolocation.getCurrentPosition(getLL, error);
+}
 
 //  find businesses nearby
 const findPlaces = async keyword => {
   try {
+    let ll = localStorage.ll;
     const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${ll}&radius=1500&type=cafe&keyword=${keyword}&key=${key}`;
     const response = await axios.get(url);
     const data = response.data.results;
@@ -64,24 +64,22 @@ const findPlaces = async keyword => {
   }
 };
 
-// findPlaces("coffee");
-
 //get places details
 const getDetails = async placeId => {
   try {
-    const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,place_id,rating,review,types,vicinity,price_level,photo&key=${key}`;
-    const response = await axios.get(url);
+    const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,place_id,rating,review,types,formatted_phone_number,opening_hours,vicinity,price_level,photo&key=${key}`;
+    var response = await axios.get(url);
     if (response) {
       loadingDiv.remove();
     }
-    displayBusinessInfo(response.data.result);
+    displaySecondPage(response.data.result);
   } catch (err) {
     console.log(err);
   }
 };
 
 // display business details to list.html
-const displayBusinessInfo = item => {
+const displaySecondPage = item => {
   console.log(item);
   let price;
   switch (item.price_level) {
@@ -110,13 +108,13 @@ const displayBusinessInfo = item => {
   const listDiv = document.createElement("div");
   listDiv.className = "list-wrapper";
   listDiv.innerHTML = `
-    <img class="venue-img" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=${item.photos[0].photo_reference}&key=${key}"/>
-    <div class="content-wrapper">
+    <img class="venue-img" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=${item.photos[0].photo_reference}&key=${key}"/>
+    <div class="second-content-wrapper">
     <h4 class="venue-name">${item.name}</h4>
-    <p class="venue-type"><em>${item.types[0]}/${item.types[1]}</em></p>
-    <p class="venue-price">price level: ${price}</p>
-    <p class="venue-rating">rating: ${item.rating}</p>
-    <p class="venue-location">${item.vicinity}</p>
+    <p><em>${item.types[0]}/${item.types[1]}</em></p>
+    <p>price level: ${price}</p>
+    <p>rating: ${item.rating}</p>
+    <p>${item.vicinity}</p>
     </div>
     `;
   listContainer.append(listDiv);
@@ -173,6 +171,7 @@ secondForm.addEventListener("submit", e => {
 appName.addEventListener("click", () => {
   location.reload();
 });
+
 // remove last search
 const removeLastPlace = () => {
   while (listContainer.lastChild) {
