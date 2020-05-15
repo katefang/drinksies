@@ -61,12 +61,12 @@ footer {
   transform: scale(1.1);
 }
 .list-wrapper {
-  width: 75%;
+  width: 60%;
   display: flex;
   border: 0.5px solid #888888;
   border-radius: 20px;
   padding: 10px;
-  margin: 20px auto;
+  margin: 40px auto;
   text-align: left;
   transition: 0.5s;
 }
@@ -202,5 +202,9 @@ footer {
   #loading-img {
     width: 400px;
     height: 400px;
+  }
+  .list-wrapper {
+    width: 90%;
+    margin: 10px auto;
   }
 }
